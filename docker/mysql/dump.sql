@@ -1,0 +1,1 @@
+CREATE DATABASE winahost_technical_bbdd;
