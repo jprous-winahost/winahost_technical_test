@@ -12,6 +12,7 @@ services:
   db:
     image: mysql:5.7
     container_name: 'winahost_technical_db'
+    platform: linux/amd64 # only active in platforms of amd64
     restart: always
     environment:
       MYSQL_DATABASE: 'root'
