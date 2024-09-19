@@ -30,16 +30,16 @@ final class OwnerDoctrineRepository extends ServiceEntityRepository implements O
      */
     public function save(Owner $owner): void
     {
-        throw new Exception('This feature it has not implemented yet');
+        //throw new Exception('This feature it has not implemented yet');
 
-       //  $ownerEntity = new \App\Entity\Owner();
-       //
-       //  $ownerEntity->setUuid($owner->getUuid()->value());
-       //  $ownerEntity->setName($owner->getName()->value());
-       //  $ownerEntity->setEmail($owner->getEmail()->value());
-       //  $ownerEntity->setPassword($owner->getPassword()->value());
-       //
-       //  $this->getEntityManager()->persist($ownerEntity);
-       //  $this->getEntityManager()->flush();
+         $ownerEntity = new \App\Entity\Owner();
+
+         $ownerEntity->setUuid($owner->uuid());
+         $ownerEntity->setName($owner->name());
+         $ownerEntity->setEmail($owner->email());
+         $ownerEntity->setPassword($owner->password());
+
+         $this->getEntityManager()->persist($ownerEntity);
+         $this->getEntityManager()->flush();
     }
 }

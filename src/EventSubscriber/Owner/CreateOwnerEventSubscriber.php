@@ -26,7 +26,7 @@ final class CreateOwnerEventSubscriber implements EventSubscriberInterface
 
     public function createOwnerLogger(CreateOwnerDomainEvent $event): void
     {
-        // TODO:: fill this method showing the owner's uuid on the logs
+        $this->logger->info($event::NAME . ' ' . $event->getOwnerEntry()->uuid());
     }
 
 
