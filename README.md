@@ -11,6 +11,9 @@ Todo esto está valorado en el dominio del Owner ya que está extendiendo el ```
 
 Para cualquier tipo de duda, no dudes en levantar la mano y consultar.
 
+
+### INSTRUCCIONES DE INSTALACIÓN Y EJECUCION DE PRUEBA
+
 Una vez se clona el proyecto 
 
 Se debe instalar las dependencias con el comando
@@ -24,4 +27,3 @@ Luego se ejecutan las migraciones para crear las tablas necesarias con el comand
 El comando para crear un Owner es
 
 `php bin/console app:create-owner`
-
