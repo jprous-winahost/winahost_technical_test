@@ -34,10 +34,10 @@ final class OwnerDoctrineRepository extends ServiceEntityRepository implements O
 
          $ownerEntity = new \App\Entity\Owner();
 
-         $ownerEntity->setUuid($owner->uuid());
-         $ownerEntity->setName($owner->name());
-         $ownerEntity->setEmail($owner->email());
-         $ownerEntity->setPassword($owner->password());
+         $ownerEntity->setUuid($owner->uuid()->uuid());
+         $ownerEntity->setName($owner->name()->value());
+         $ownerEntity->setEmail($owner->email()->value());
+         $ownerEntity->setPassword($owner->password()->value());
 
          $this->getEntityManager()->persist($ownerEntity);
          $this->getEntityManager()->flush();

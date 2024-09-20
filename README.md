@@ -10,3 +10,18 @@ Dado que estamos trabajando con eventos de dominio, sería valorable hacer una l
 Todo esto está valorado en el dominio del Owner ya que está extendiendo el ```AggregateRoot``` nos provee de esta funcionalidad.
 
 Para cualquier tipo de duda, no dudes en levantar la mano y consultar.
+
+Una vez se clona el proyecto 
+
+Se debe instalar las dependencias con el comando
+
+`composer install`
+
+Luego se ejecutan las migraciones para crear las tablas necesarias con el comando
+
+`php bin/console doctrine:migrations:migrate`
+
+El comando para crear un Owner es
+
+`php bin/console app:create-owner`
+

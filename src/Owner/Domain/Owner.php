@@ -6,17 +6,21 @@ declare(strict_types=1);
 namespace App\Owner\Domain;
 
 
+use App\Owner\Domain\ValueObjects\OwnerEmailVO;
+use App\Owner\Domain\ValueObjects\OwnerNameVO;
+use App\Owner\Domain\ValueObjects\OwnerPasswordVO;
+use App\Owner\Domain\ValueObjects\OwnerUuidVO;
 use App\Shared\Domain\Aggregate\AggregateRoot;
 use App\Owner\Domain\Event\CreateOwnerDomainEvent;
 
 final class Owner extends AggregateRoot
 {
-    private string $name;
-    private string $uuid;
-    private string $email;
-    private string $password;
+    private OwnerNameVO $name;
+    private OwnerUuidVO $uuid;
+    private OwnerEmailVO $email;
+    private OwnerPasswordVO $password;
 
-    public function __construct(string $name, string $uuid, string $email, string $password)
+    public function __construct(OwnerNameVO $name, OwnerUuidVO $uuid, OwnerEmailVO $email, OwnerPasswordVO $password)
     {
         $this->name = $name;
         $this->uuid = $uuid;
@@ -29,22 +33,22 @@ final class Owner extends AggregateRoot
         $this->addEvent(new CreateOwnerDomainEvent($this));
     }
 
-    public function name(): string
+    public function name(): OwnerNameVO
     {
         return $this->name;
     }
 
-    public function uuid(): string
+    public function uuid(): OwnerUuidVO
     {
         return $this->uuid;
     }
 
-    public function email(): string
+    public function email(): OwnerEmailVO
     {
         return $this->email;
     }
 
-    public function password(): string
+    public function password(): OwnerPasswordVO
     {
         return $this->password;
     }
